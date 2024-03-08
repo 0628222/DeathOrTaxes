@@ -75,7 +75,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95194, 0, 0 )
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, 0.934285, 1.55522, -6.29912 )
 
-[node name="Wall" type="MeshInstance" parent="Wall"]
+[node name="dutchANGLE" type="MeshInstance" parent="Wall"]
+transform = Transform( 0.999424, 0.0163958, 0, -0.0701135, 0.999424, 0, 0, 0, 0.999999, -0.349525, 0.0294126, -5.20531 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
@@ -87,9 +88,22 @@ shape = SubResource( 9 )
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, -12.6545, 1.27346, -6.29628 )
 
 [node name="Wall" type="MeshInstance" parent="Wall2"]
+transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall2"]
+shape = SubResource( 9 )
+
+[node name="Wall3" type="StaticBody" parent="."]
+transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, -12.1359, 1.27346, 6.12908 )
+
+[node name="Wall" type="MeshInstance" parent="Wall3"]
+transform = Transform( -0.0136756, -9.09651e-05, 0.0221374, 0.0269013, 0.95549, 1.45528e-05, -7.517, 0.000500324, -4.02665e-05, 0.63611, 0.0799002, 0.994648 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall3"]
 shape = SubResource( 9 )
