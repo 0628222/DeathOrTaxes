@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://_MyContent/Materials/Metal.tres" type="Material" id=1]
+[ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=2]
+[ext_resource path="res://_MyContent/Images/Wood_Normal.jpg" type="Texture" id=4]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.596078, 0.388235, 0.0313726, 1 )
+metallic = 0.52
+metallic_specular = 1.0
+uv1_scale = Vector3( 60, 16.902, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.24983, 1, 0.341729 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.606686, 1, 0.0569874 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.28628, 1, 0.0569874 )
+
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="CubeMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.501961, 0, 0, 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 4 )
+uv1_scale = Vector3( 15.19, 2.588, 1 )
+
+[sub_resource type="BoxShape" id=9]
+
+[node name="Room" type="Spatial"]
+
+[node name="Floor_Main" type="CSGMesh" parent="."]
+transform = Transform( 15.81, 0, 0, 0, 0.291, 0, 0, 0, 7.905, 7.61261, -0.2935, 0 )
+mesh = SubResource( 1 )
+material = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor_Main"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor_Main/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21025, 0, -0.525312 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Floor_Main/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.189753, 0, 0.521422 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Floor_Main/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.402156, 0, -0.00197911 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Floor_Main/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.724427, 0, -0.00197911 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Floor_Main/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318222, -0.344263, -0.00197911 )
+shape = SubResource( 5 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Floor_Main"]
+transform = Transform( 0.43026, 0, 0, 0, 1.4262, 0, 0, 0, 0.199849, 0.466384, 2.01541, -0.00905574 )
+operation = 2
+mesh = SubResource( 6 )
+material = ExtResource( 1 )
+
+[node name="FPController" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95194, 0, 0 )
+
+[node name="Wall" type="StaticBody" parent="."]
+transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, 0.934285, 1.55522, -6.29912 )
+
+[node name="Wall" type="MeshInstance" parent="Wall"]
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall"]
+shape = SubResource( 9 )
+
+[node name="Wall2" type="StaticBody" parent="."]
+transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, -12.6545, 1.27346, -6.29628 )
+
+[node name="Wall" type="MeshInstance" parent="Wall2"]
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall2"]
+shape = SubResource( 9 )

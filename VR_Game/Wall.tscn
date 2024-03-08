@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Wall" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 6.51921
+height = 4.19289
+depth = 0.301431

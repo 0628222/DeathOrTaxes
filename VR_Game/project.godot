@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="VR Starter Tutorial Complete"
-run/main_scene="res://Arcade.tscn"
+run/main_scene="res://Room.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
 

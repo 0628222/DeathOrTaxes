@@ -429,7 +429,6 @@ shape = SubResource( 8 )
 [node name="Item_Holder" type="MeshInstance" parent="World"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1189, 0.649612, -24.0485 )
 mesh = SubResource( 9 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="World/Item_Holder"]
 
@@ -439,7 +438,6 @@ shape = SubResource( 10 )
 [node name="Item_Holder2" type="MeshInstance" parent="World"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5961, 6.64961, 17.6404 )
 mesh = SubResource( 9 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="World/Item_Holder2"]
 
@@ -449,7 +447,6 @@ shape = SubResource( 10 )
 [node name="Item_Holder3" type="MeshInstance" parent="World"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.658, 0.649612, -26.1134 )
 mesh = SubResource( 9 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="World/Item_Holder3"]
 
@@ -459,7 +456,6 @@ shape = SubResource( 10 )
 [node name="Item_Holder4" type="MeshInstance" parent="World"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.658, 0.649612, 26.8866 )
 mesh = SubResource( 9 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="World/Item_Holder4"]
 
