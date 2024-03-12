@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://_MyContent/Images/Wood_Normal.jpg" type="Texture" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.501961, 0, 0, 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 1 )
+uv1_scale = Vector3( 15.19, 2.588, 1 )
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="testing" type="Spatial"]
+
+[node name="Wall2" type="StaticBody" parent="."]
+transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, -12.6545, 1.27346, -6.29628 )
+
+[node name="Wall" type="MeshInstance" parent="Wall2"]
+transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall2"]
+shape = SubResource( 3 )
