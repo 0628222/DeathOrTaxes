@@ -1,8 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://_MyContent/Materials/Metal.tres" type="Material" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/computer_desk/scene.gltf" type="PackedScene" id=3]
 [ext_resource path="res://_MyContent/Images/Wood_Normal.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/desktop_computer/Computer.gltf" type="PackedScene" id=5]
+[ext_resource path="res://Assets/desk_lamp/Mothman.gltf" type="PackedScene" id=6]
+[ext_resource path="res://Assets/antique_wall_clock/Clock.gltf" type="PackedScene" id=7]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -35,6 +39,18 @@ uv1_scale = Vector3( 15.19, 2.588, 1 )
 [sub_resource type="BoxShape" id=9]
 
 [node name="Room" type="Spatial"]
+
+[node name="Mothman" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.091809, -0.0642988, 0.993944, -0.0590722, 1.06058, 0.0659733, -0.994023, -0.0689665, 0.0878811, -0.608575, 2.05607, 2.62605 )
+
+[node name="Clock" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.091809, -0.0642988, 0.993944, -0.0590722, 1.06059, 0.0659733, -0.994023, -0.0689665, 0.0878811, -7.8313, 2.44605, 0 )
+
+[node name="scene" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.00825901, -0.681287, 0.00737627, 0.0292913, -0.85532, 1.99613, 1.56998 )
+
+[node name="Computer" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.0473743, 0.0128191, 1.09865, 0.0110418, 1.07139, -0.012977, -1.45456, 0.0157484, 0.0625374, -0.485086, 2.56639, 1.48783 )
 
 [node name="Floor_Main" type="CSGMesh" parent="."]
 transform = Transform( 15.81, 0, 0, 0, 0.291, 0, 0, 0, 7.905, 7.61261, -0.2935, 0 )
@@ -70,7 +86,7 @@ mesh = SubResource( 6 )
 material = ExtResource( 1 )
 
 [node name="FPController" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95194, 0, 0 )
+transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.00825901, -0.681287, 0.00737627, 0.0292913, 2.87618, 2.02719, 1.14593 )
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, 0.934285, 1.55522, -6.29912 )
