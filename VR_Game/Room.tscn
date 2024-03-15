@@ -1,8 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://_MyContent/Materials/Metal.tres" type="Material" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/computer_desk/scene.gltf" type="PackedScene" id=3]
 [ext_resource path="res://_MyContent/Images/Wood_Normal.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/desktop_computer/Computer.gltf" type="PackedScene" id=5]
+[ext_resource path="res://Assets/desk_lamp/Mothman.gltf" type="PackedScene" id=6]
+[ext_resource path="res://Assets/antique_wall_clock/Clock.gltf" type="PackedScene" id=7]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -26,7 +30,7 @@ extents = Vector3( 0.28628, 1, 0.0569874 )
 [sub_resource type="CubeMesh" id=7]
 
 [sub_resource type="SpatialMaterial" id=8]
-albedo_color = Color( 0.501961, 0, 0, 1 )
+albedo_color = Color( 0.898039, 0.866667, 0.866667, 1 )
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 4 )
@@ -35,6 +39,18 @@ uv1_scale = Vector3( 15.19, 2.588, 1 )
 [sub_resource type="BoxShape" id=9]
 
 [node name="Room" type="Spatial"]
+
+[node name="Mothman" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.091809, -0.0642988, 0.993944, -0.0590722, 1.06058, 0.0659733, -0.994023, -0.0689665, 0.0878811, -0.608575, 2.05607, 2.62605 )
+
+[node name="Clock" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.091809, -0.0642988, 0.993944, -0.0590722, 1.06059, 0.0659733, -0.994023, -0.0689665, 0.0878811, -7.8313, 2.44605, 0 )
+
+[node name="scene" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.00825901, -0.681287, 0.00737627, 0.0292913, -0.85532, 1.99613, 1.56998 )
+
+[node name="Computer" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.0473743, 0.0128191, 1.09865, 0.0110418, 1.07139, -0.012977, -1.45456, 0.0157484, 0.0625374, -0.485086, 2.56639, 1.48783 )
 
 [node name="Floor_Main" type="CSGMesh" parent="."]
 transform = Transform( 15.81, 0, 0, 0, 0.291, 0, 0, 0, 7.905, 7.61261, -0.2935, 0 )
@@ -70,12 +86,13 @@ mesh = SubResource( 6 )
 material = ExtResource( 1 )
 
 [node name="FPController" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95194, 0, 0 )
+transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.00825901, -0.681287, 0.00737627, 0.0292913, 2.87618, 2.02719, 1.14593 )
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, 0.934285, 1.55522, -6.29912 )
 
-[node name="Wall" type="MeshInstance" parent="Wall"]
+[node name="dutchANGLE" type="MeshInstance" parent="Wall"]
+transform = Transform( 0.999424, 0.0163958, 0, -0.0701135, 0.999424, 0, 0, 0, 0.999999, -0.349525, 0.0294126, -5.20531 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
@@ -87,9 +104,38 @@ shape = SubResource( 9 )
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, -12.6545, 1.27346, -6.29628 )
 
 [node name="Wall" type="MeshInstance" parent="Wall2"]
+transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall2"]
 shape = SubResource( 9 )
+
+[node name="Wall4" type="StaticBody" parent="."]
+transform = Transform( -0.261737, 0.0469234, 0.331937, -0.0816758, 3.3378, -0.00482156, -6.8981, -0.0413011, -0.0125377, -4.29465, 2.15189, 12.4571 )
+
+[node name="Wall" type="MeshInstance" parent="Wall4"]
+transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall4"]
+shape = SubResource( 9 )
+
+[node name="Wall3" type="StaticBody" parent="."]
+transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, -12.1359, 1.27346, 6.12908 )
+
+[node name="Wall" type="MeshInstance" parent="Wall3"]
+transform = Transform( -0.0136756, -9.09651e-05, 0.0221374, 0.0269013, 0.95549, 1.45528e-05, -7.517, 0.000500324, -4.02665e-05, 0.588875, 0.0799002, 0.994648 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall3"]
+shape = SubResource( 9 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.0453, 0 )
+omni_range = 10000.0
