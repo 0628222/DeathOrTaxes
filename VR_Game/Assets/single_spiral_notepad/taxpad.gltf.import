@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/scene.gltf-ac1c09046d1139ccc85bc456b4951546.scn"
+path="res://.import/taxpad.gltf-343cc2f14f75c14037e24d6966299bcd.scn"
 
 [deps]
 
-source_file="res://Assets/single_spiral_notepad/scene.gltf"
-dest_files=[ "res://.import/scene.gltf-ac1c09046d1139ccc85bc456b4951546.scn" ]
+source_file="res://Assets/single_spiral_notepad/taxpad.gltf"
+dest_files=[ "res://.import/taxpad.gltf-343cc2f14f75c14037e24d6966299bcd.scn" ]
 
 [params]
 
