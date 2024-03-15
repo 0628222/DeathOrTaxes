@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/scene.gltf-42eb6edd5d40aca75fa0a57c08410292.scn"
+path="res://.import/Taxbent.gltf-b760f372e4d8ef008ba84d4369d89389.scn"
 
 [deps]
 
-source_file="res://Assets/file_cabinet/scene.gltf"
-dest_files=[ "res://.import/scene.gltf-42eb6edd5d40aca75fa0a57c08410292.scn" ]
+source_file="res://Assets/file_cabinet/Taxbent.gltf"
+dest_files=[ "res://.import/Taxbent.gltf-b760f372e4d8ef008ba84d4369d89389.scn" ]
 
 [params]
 
