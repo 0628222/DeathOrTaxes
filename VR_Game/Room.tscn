@@ -10,16 +10,11 @@
 [ext_resource path="res://Assets/single_spiral_notepad/taxpad.gltf" type="PackedScene" id=8]
 [ext_resource path="res://Images/Floorboards.png" type="Texture" id=9]
 [ext_resource path="res://Images/TODLogo.jpg" type="Texture" id=10]
-[ext_resource path="res://Images/image5.png" type="Texture" id=11]
 
 [sub_resource type="CubeMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.596078, 0.388235, 0.0313726, 1 )
-albedo_texture = ExtResource( 11 )
-metallic = 0.52
-metallic_specular = 1.0
-uv1_scale = Vector3( 60, 16.902, 1 )
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.24983, 1, 0.341729 )
@@ -35,8 +30,7 @@ extents = Vector3( 0.28628, 1, 0.0569874 )
 [sub_resource type="CubeMesh" id=7]
 
 [sub_resource type="SpatialMaterial" id=8]
-albedo_color = Color( 0.898039, 0.866667, 0.866667, 1 )
-albedo_texture = ExtResource( 9 )
+albedo_color = Color( 0.333333, 0.176471, 0.176471, 1 )
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 4 )
@@ -47,6 +41,11 @@ uv1_scale = Vector3( 15.19, 2.588, 1 )
 [sub_resource type="SpatialMaterial" id=10]
 albedo_texture = ExtResource( 10 )
 
+[sub_resource type="SpatialMaterial" id=2]
+metallic = 0.52
+metallic_specular = 1.0
+uv1_scale = Vector3( 60, 16.902, 1 )
+
 [sub_resource type="SpatialMaterial" id=11]
 albedo_texture = ExtResource( 9 )
 
@@ -54,7 +53,7 @@ albedo_texture = ExtResource( 9 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162443, -0.0125942, -0.0447178 )
 
 [node name="Mothman" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.0271016, 0, 0.999633, 0, 1, 0, -0.999633, 0, 0.0271016, -0.696249, 2.14169, 2.62582 )
+transform = Transform( 0.0271016, 0, 0.999633, 0, 1, 0, -0.999633, 0, 0.0271016, -0.533306, 1.60998, 2.61357 )
 
 [node name="taxpad" parent="." instance=ExtResource( 8 )]
 transform = Transform( -0.400139, 0.989997, 0.502943, -9.8323, -0.215568, 0.110807, 0.318717, -0.152184, 11.0875, -7.76887, 2.31268, 0.473711 )
@@ -63,15 +62,15 @@ transform = Transform( -0.400139, 0.989997, 0.502943, -9.8323, -0.215568, 0.1108
 transform = Transform( 0.091809, -0.0642988, 0.993944, -0.0590722, 1.06059, 0.0659733, -0.994023, -0.0689665, 0.0878811, -7.8313, 2.44605, 0 )
 
 [node name="scene" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.00825901, -0.681287, 0.00737627, 0.0292913, -0.85532, 1.99613, 1.56998 )
+transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.00825901, -0.681287, 0.00737627, 0.0292913, -0.85532, 1.65868, 1.56998 )
 
 [node name="Computer" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.0473743, 0.0128191, 1.09865, 0.0110418, 1.07139, -0.012977, -1.45456, 0.0157484, 0.0625374, -0.485086, 2.56639, 1.48783 )
+transform = Transform( 0.0473743, 0.0128191, 1.09865, 0.0110418, 1.07139, -0.012977, -1.45456, 0.0157484, 0.0625374, -0.485086, 2.13657, 1.48783 )
 
 [node name="Floor_Main" type="CSGMesh" parent="."]
 transform = Transform( 15.81, 0, 0, 0, 0.291, 0, 0, 0, 7.905, 7.61261, -0.2935, 0 )
 mesh = SubResource( 1 )
-material = SubResource( 2 )
+material = SubResource( 12 )
 
 [node name="StaticBody" type="StaticBody" parent="Floor_Main"]
 
@@ -108,7 +107,7 @@ transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, 0.934285, 1.55522, -6.29912 )
 
 [node name="dutchANGLE" type="MeshInstance" parent="Wall"]
-transform = Transform( 0.999424, 0.0163958, 0, -0.0701135, 0.999424, 0, 0, 0, 0.999999, -0.349525, 0.0294126, -5.20531 )
+transform = Transform( 0.999424, 0.0163958, 0, -0.133438, 1.90207, 0, 0, 0, 0.999999, -0.349525, 0.0294126, -5.20531 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
@@ -120,7 +119,7 @@ shape = SubResource( 9 )
 transform = Transform( 6.90355, 0, 0, 0, 3.47456, 0, 0, 0, 0.332209, -12.6545, 1.27346, -6.29628 )
 
 [node name="Wall" type="MeshInstance" parent="Wall2"]
-transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
+transform = Transform( -0.0377774, 0, 0.0480871, 0, 2.03916, 0, -39.335, 0, -0.0715583, 0.628923, 0, 9.90975 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
@@ -132,7 +131,7 @@ shape = SubResource( 9 )
 transform = Transform( -3.01764e-07, 0, 0.332209, 0, 1.45129, 0, -6.90355, 0, -1.45213e-08, 8.73078, 1.77368, 12.449 )
 
 [node name="Wall" type="MeshInstance" parent="Wall5"]
-transform = Transform( -0.0377178, 0, 0.0480113, 0, 2.33929, 0, -20.7332, 0, -0.0377179, 0.628923, 0, 9.90976 )
+transform = Transform( -0.0377178, 0, 0.0480113, 0, 4.19776, 0, -20.7332, 0, -0.0377179, 0.628922, 0, 9.90977 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
@@ -144,7 +143,7 @@ shape = SubResource( 9 )
 transform = Transform( -0.261737, 0.0469234, 0.331937, -0.0816758, 3.3378, -0.00482156, -6.8981, -0.0413011, -0.0125377, -4.29465, 2.15189, 13.3317 )
 
 [node name="Wall" type="MeshInstance" parent="Wall4"]
-transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
+transform = Transform( -0.0379195, -0.00459461, 0.0480923, 0.0248283, 1.80295, -0.000901003, -20.7695, -0.117129, -0.037646, 0.628923, -1.19209e-07, 9.90975 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
@@ -156,7 +155,7 @@ shape = SubResource( 9 )
 transform = Transform( -0.261737, 0.0469234, 0.331937, -0.0816758, 3.3378, -0.00482156, -6.8981, -0.0413011, -0.0125377, 21.7199, 2.15189, 11.7174 )
 
 [node name="Wall" type="MeshInstance" parent="Wall6"]
-transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
+transform = Transform( -0.0379174, -0.00452765, 0.0480922, 0.0244665, 1.79124, -0.000887872, -20.7695, -0.115422, -0.0376479, 0.628923, 0, 9.90974 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
@@ -168,7 +167,7 @@ shape = SubResource( 9 )
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.497095, 19.3633, 2.15189, -2.83718 )
 
 [node name="Wall" type="MeshInstance" parent="Wall7"]
-transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
+transform = Transform( -0.0377774, 0, 0.0480871, 0, 1.71081, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
@@ -180,24 +179,12 @@ shape = SubResource( 9 )
 transform = Transform( 0.120483, 0, 0.497019, 0, 3.33839, 0, -6.9025, 0, 0.00867549, 10.6262, 2.15189, -4.02163 )
 
 [node name="Wall" type="MeshInstance" parent="FinalWall"]
-transform = Transform( -0.0377774, 0, 0.0480871, 0, 0.999999, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90975 )
+transform = Transform( -0.0377774, 0, 0.0480871, 0, 1.57949, 0, -20.7659, 0, -0.0377774, 0.628923, 0, 9.90974 )
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="FinalWall"]
-shape = SubResource( 9 )
-
-[node name="Wall3" type="StaticBody" parent="."]
-transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, -12.1359, 1.27346, 6.12908 )
-
-[node name="Wall" type="MeshInstance" parent="Wall3"]
-transform = Transform( -0.0136756, -9.09651e-05, 0.0221374, 0.0269013, 0.95549, 1.45528e-05, -7.517, 0.000500324, -4.02665e-05, 0.588875, 0.0799002, 0.994648 )
-mesh = SubResource( 7 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 8 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Wall3"]
 shape = SubResource( 9 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
@@ -210,7 +197,7 @@ width = 0.307535
 material = SubResource( 10 )
 
 [node name="Ruth" type="CSGMesh" parent="."]
-transform = Transform( 24.5936, 0, 0, 0, 0.202146, 0, 0, 0, 8.85195, 12.6961, 5.13766, 0.201912 )
+transform = Transform( 24.5936, 0, 0, 0, 0.202146, 0, 0, 0, 8.85195, 12.6961, 8.49642, 0.201912 )
 mesh = SubResource( 1 )
 material = SubResource( 2 )
 
