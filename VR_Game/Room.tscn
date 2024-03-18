@@ -8,7 +8,7 @@
 [ext_resource path="res://Mothman.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/antique_wall_clock/Clock.gltf" type="PackedScene" id=7]
 [ext_resource path="res://Assets/single_spiral_notepad/taxpad.gltf" type="PackedScene" id=8]
-[ext_resource path="res://Images/Floorboards.png" type="Texture" id=9]
+[ext_resource path="res://Images/image1.png" type="Texture" id=9]
 [ext_resource path="res://Images/TODLogo.jpg" type="Texture" id=10]
 
 [sub_resource type="CubeMesh" id=1]
@@ -46,7 +46,7 @@ metallic = 0.52
 metallic_specular = 1.0
 uv1_scale = Vector3( 60, 16.902, 1 )
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=13]
 albedo_texture = ExtResource( 9 )
 
 [node name="Room" type="Spatial"]
@@ -59,13 +59,13 @@ transform = Transform( 0.0271016, 0, 0.999633, 0, 1, 0, -0.999633, 0, 0.0271016,
 transform = Transform( -0.400139, 0.989997, 0.502943, -9.8323, -0.215568, 0.110807, 0.318717, -0.152184, 11.0875, -7.76887, 2.31268, 0.473711 )
 
 [node name="Clock" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.091809, -0.0642988, 0.993944, -0.0590722, 1.06059, 0.0659733, -0.994023, -0.0689665, 0.0878811, -7.8313, 2.44605, 0 )
+transform = Transform( 0.091809, -0.0642988, 0.993944, -0.194952, 3.50019, 0.217727, -2.20028, -0.152658, 0.194526, -7.8768, 4.77996, 0.716144 )
 
-[node name="scene" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.00825901, -0.681287, 0.00737627, 0.0292913, -0.85532, 1.65868, 1.56998 )
+[node name="Desk" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0293769, 0.00794918, 0.681276, 0.00702742, 0.68187, -0.00825901, -0.681287, 0.00737627, 0.0292913, -0.85532, 1.29368, 1.56998 )
 
-[node name="Computer" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.0473743, 0.0128191, 1.09865, 0.0110418, 1.07139, -0.012977, -1.45456, 0.0157484, 0.0625374, -0.485086, 2.13657, 1.48783 )
+[node name="Computer" parent="Desk" instance=ExtResource( 5 )]
+transform = Transform( 2.13399, -0.00607101, -0.0224101, -0.00607113, 1.57132, 0.000743789, -0.02241, 0.000743766, 1.61359, 0.150952, 0.7057, 0.528699 )
 
 [node name="Floor_Main" type="CSGMesh" parent="."]
 transform = Transform( 15.81, 0, 0, 0, 0.291, 0, 0, 0, 7.905, 7.61261, -0.2935, 0 )
@@ -192,7 +192,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.0453, 0 )
 omni_range = 10000.0
 
 [node name="Poster" type="CSGBox" parent="."]
-transform = Transform( -0.314041, 0.0204008, -0.0858639, -0.205765, -1.46422, -0.00108325, -6.95853, 0.0423766, 0.00390709, -7.90618, 2.76154, -2.06855 )
+transform = Transform( 0.00247433, 0.0192456, -0.0859522, -0.188238, -1.46431, -0.00112968, -6.96611, 0.0395755, -3.75709e-09, -7.77518, 2.76154, -2.06352 )
 width = 0.307535
 material = SubResource( 10 )
 
@@ -224,8 +224,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318222, -0.344263, -0.001979
 shape = SubResource( 5 )
 
 [node name="Sideways Poster" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4653, 1.69624, 0 )
+transform = Transform( -0.522199, 0.00393732, 4.69526e-11, 5.44411e-16, -6.22734e-09, 0.522214, 0.00393732, 0.522199, 6.22716e-09, 22.8522, 4.06085, 1.11759e-08 )
 width = 0.002
-height = 5.44642
+height = 6.09166
 depth = 12.2444
-material = SubResource( 11 )
+material = SubResource( 13 )
