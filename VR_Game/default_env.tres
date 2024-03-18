@@ -11,10 +11,12 @@ ground_curve = 0.01
 sun_energy = 16.0
 
 [resource]
+background_mode = 2
 background_sky = SubResource( 1 )
 background_color = Color( 0.376471, 0.254902, 0, 1 )
 background_energy = 16.0
-fog_color = Color( 1, 1, 1, 1 )
+fog_enabled = true
+fog_color = Color( 1, 0, 0, 1 )
 fog_sun_color = Color( 1, 0.901961, 0.701961, 1 )
 fog_height_min = 0.0
 fog_height_max = 100.0
