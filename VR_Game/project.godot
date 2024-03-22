@@ -14,7 +14,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="VR Starter Tutorial Complete"
+config/name="Taxes or Demise"
 run/main_scene="res://Scenes/Room.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
