@@ -3,7 +3,6 @@
 [ext_resource path="res://Assets/antique_wall_clock/Clock.gltf" type="PackedScene" id=1]
 [ext_resource path="res://_MyContent/Materials/Metal.tres" type="Material" id=2]
 [ext_resource path="res://_MyContent/Images/Wood_Normal.jpg" type="Texture" id=3]
-[ext_resource path="res://Images/TODLogo.jpg" type="Texture" id=4]
 [ext_resource path="res://Images/image1.png" type="Texture" id=5]
 [ext_resource path="res://Assets/single_spiral_notepad/taxpad.gltf" type="PackedScene" id=6]
 [ext_resource path="res://Mothman.tscn" type="PackedScene" id=7]
@@ -38,8 +37,12 @@ uv1_scale = Vector3( 15.19, 2.588, 1 )
 
 [sub_resource type="BoxShape" id=9]
 
+[sub_resource type="StreamTexture" id=14]
+flags = 23
+load_path = "res://.import/TODLogo.jpg-aab6943172f8e28b565429b9dc75cada.s3tc.stex"
+
 [sub_resource type="SpatialMaterial" id=10]
-albedo_texture = ExtResource( 4 )
+albedo_texture = SubResource( 14 )
 
 [sub_resource type="SpatialMaterial" id=2]
 metallic = 0.52
