@@ -17,7 +17,7 @@ _global_script_class_icons={
 config/name="Taxes or Demise"
 run/main_scene="res://Scenes/Room.tscn"
 run/low_processor_mode=true
-config/icon="res://icon.png"
+config/icon="res://Images/Taxes or Demise logo.png"
 
 [autoload]
 
