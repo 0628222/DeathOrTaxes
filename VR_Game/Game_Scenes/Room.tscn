@@ -10,7 +10,7 @@
 [ext_resource path="res://Images/FlipTaxes.png" type="Texture" id=8]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/desktop_computer/Computer.gltf" type="PackedScene" id=10]
-[ext_resource path="res://Mothman.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Mothman.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CubeMesh" id=1]
 

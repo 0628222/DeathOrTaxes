@@ -3,7 +3,7 @@
 [ext_resource path="res://_MyContent/Images/Wood_Normal.jpg" type="Texture" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/computer_desk/scene.gltf" type="PackedScene" id=3]
-[ext_resource path="res://Mothman.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Mothman.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/desktop_computer/Computer.gltf" type="PackedScene" id=5]
 [ext_resource path="res://_MyContent/Images/Arcade Floor Galaxy.jpg" type="Texture" id=6]
 [ext_resource path="res://Assets/file_cabinet/Taxbent.gltf" type="PackedScene" id=7]
