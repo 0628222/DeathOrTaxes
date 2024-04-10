@@ -40,6 +40,7 @@ uv1_scale = Vector3( 15.19, 2.588, 1 )
 albedo_texture = ExtResource( 8 )
 
 [sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0, 0, 1 )
 metallic = 0.52
 metallic_specular = 1.0
 uv1_scale = Vector3( 60, 16.902, 1 )
@@ -96,7 +97,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318222, -0.344263, -0.001979
 shape = SubResource( 5 )
 
 [node name="FPController" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.0163181, 0, 0.999867, 0, 1, 0, -0.999867, 0, 0.0163181, 1.71335, 1.13396, 1.6679 )
+transform = Transform( 0.080773, 0, 0.996733, 0, 1, 0, -0.996733, 0, 0.080773, 1.71335, 1.13396, 1.6679 )
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, 0.934285, 1.55522, -6.29912 )
@@ -174,7 +175,7 @@ width = 0.307535
 material = SubResource( 10 )
 
 [node name="Roof" type="CSGMesh" parent="."]
-transform = Transform( 24.5936, 0, 0, 0, 0.202146, 0, 0, 0, 8.85195, 12.6961, 8.31147, 0.201912 )
+transform = Transform( 24.5936, 0, 0, 0, -0.202111, -0.165765, 0, 0.00378546, -8.8504, 12.6961, 8.31147, 0.201912 )
 mesh = SubResource( 1 )
 material = SubResource( 2 )
 
@@ -213,5 +214,9 @@ depth = 2.00075
 material = SubResource( 15 )
 
 [node name="CSGBox2" type="CSGBox" parent="."]
-transform = Transform( -0.0182202, 0, -0.999834, 0, 0.0540044, 0, 0.999834, 0, -0.0182202, 3.51796, 0, 5.9063 )
+transform = Transform( -5.21092e-05, 5.2711e-05, -0.999999, 0.999961, -0.000478814, -6.0761e-05, -0.00886627, -0.0540023, -0.00097555, 3.51796, 3.43596, 7.77943 )
 material = SubResource( 17 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70477, 7.5855, 0 )
+light_energy = 7.486
