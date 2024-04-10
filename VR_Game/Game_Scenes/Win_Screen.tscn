@@ -40,3 +40,6 @@ margin_top = 634.0
 margin_right = 1100.0
 margin_bottom = 688.0
 text = "Quit game"
+
+[connection signal="pressed" from="Return to room" to="." method="_on_Return_to_room_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
