@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Images/FlippedLogo.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/antique_wall_clock/Clock.gltf" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Images/FlipTaxes.png" type="Texture" id=8]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/desktop_computer/numPad.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Mothman.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/desktop_computer/Mouse.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/desktop_computer/PC.tscn" type="PackedScene" id=13]
 
@@ -64,13 +63,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161912, 0.0507411, -0.03826
 transform = Transform( 0.246779, 0, 0, 0, 0.246779, 0, 0, 0, 0.246779, -2.34652, 1.35042, 1.16656 )
 
 [node name="mouse5" parent="." instance=ExtResource( 12 )]
-transform = Transform( 0.0847643, 0, 0, 0, 0.0847643, 0, 0, 0, 0.0847643, 0, 1.47617, 0 )
+transform = Transform( 0.0847643, 0, 0, 0, 0.0847643, 0, 0, 0, 0.0847643, 0, 1.47617, 0.616787 )
 
 [node name="numPad" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.198439, 0, 0, 0, 0.107333, 0, 0, 0, 0.145269, 0, 1.42977, 2.02237 )
-
-[node name="Lamp" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.0270048, 0, 0.996062, 0, 0.700522, 0, -0.996062, 0, 0.0270048, -0.533306, 1.33223, 4.22173 )
 
 [node name="taxpad" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.400139, 0.989997, 0.502943, -9.8323, -0.215568, 0.110807, 0.318717, -0.152184, 11.0875, -7.76887, 2.31268, 0.473711 )
@@ -221,7 +217,7 @@ depth = 12.2444
 material = SubResource( 13 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 0.404899, -3.90777e-06, 0.051902, -0.000743338, -0.000766377, 0.0021654, 0.0206365, -5.30462e-06, -0.55161, -0.422681, 1.39765, -0.676688 )
+transform = Transform( 0.405337, -4.27808e-06, 0.0122145, -0.000743338, -0.000766377, 0.0021654, -0.00845045, -5.01076e-06, -0.553912, -0.422681, 1.39765, -0.490363 )
 depth = 2.00075
 material = SubResource( 15 )
 
@@ -231,4 +227,4 @@ material = SubResource( 17 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70477, 7.5855, 0 )
-light_energy = 7.486
+light_energy = 5.0
