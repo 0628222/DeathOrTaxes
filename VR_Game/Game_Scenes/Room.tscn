@@ -61,13 +61,13 @@ albedo_texture = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161912, 0.0507411, -0.0382663 )
 
 [node name="PC" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.246779, 0, 0, 0, 0.246779, 0, 0, 0, 0.246779, -2.34652, 1.75315, 1.16656 )
+transform = Transform( 0.246779, 0, 0, 0, 0.246779, 0, 0, 0, 0.246779, -2.34652, 1.35042, 1.16656 )
 
 [node name="mouse5" parent="." instance=ExtResource( 12 )]
-transform = Transform( 0.0847643, 0, 0, 0, 0.0847643, 0, 0, 0, 0.0847643, 0, 1.85338, 0 )
+transform = Transform( 0.0847643, 0, 0, 0, 0.0847643, 0, 0, 0, 0.0847643, 0, 1.47617, 0 )
 
 [node name="numPad" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.198439, 0, 0, 0, 0.107333, 0, 0, 0, 0.145269, 0, 1.6273, 2.02237 )
+transform = Transform( 0.198439, 0, 0, 0, 0.107333, 0, 0, 0, 0.145269, 0, 1.42977, 2.02237 )
 
 [node name="Lamp" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.0270048, 0, 0.996062, 0, 0.700522, 0, -0.996062, 0, 0.0270048, -0.533306, 1.33223, 4.22173 )
