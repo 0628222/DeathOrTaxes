@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://_MyContent/Images/Wood_Normal.jpg" type="Texture" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Assets/desktop_computer/Computer.gltf" type="PackedScene" id=5]
 [ext_resource path="res://_MyContent/Images/Arcade Floor Galaxy.jpg" type="Texture" id=6]
 [ext_resource path="res://Assets/file_cabinet/Taxbent.gltf" type="PackedScene" id=7]
+[ext_resource path="res://Assets/PC.glb" type="PackedScene" id=8]
+[ext_resource path="res://Assets/numPad.glb" type="PackedScene" id=9]
+[ext_resource path="res://Assets/mouse5.glb" type="PackedScene" id=10]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -36,11 +39,21 @@ transform = Transform( -0.013469, -0.0163876, 0.999775, -0.0217242, 0.999635, 0.
 [node name="scene" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.0225372, 0.00848729, 0.68153, 0.00702742, 0.68187, -0.00825901, -0.681548, 0.00675016, -0.0226218, -19.4487, -1.73779, -5.34605 )
 
+[node name="numPad" parent="scene" instance=ExtResource( 9 )]
+transform = Transform( -0.00277617, 0.000865655, -0.083954, 0.00104546, 0.0839938, 0.000831485, 0.0839521, -0.00101737, -0.00278659, -0.648649, 0.191073, 0.731861 )
+
 [node name="Computer" parent="scene" instance=ExtResource( 5 )]
 transform = Transform( 1.17063, 0.0134983, 0.773525, -0.00959814, 1.57117, -0.0150363, -1.13331, 0.00461568, 0.988021, -1.63246, 0.590791, -0.404512 )
+visible = false
 
 [node name="Mothman" parent="scene" instance=ExtResource( 4 )]
 transform = Transform( -0.362736, 0.0078587, -0.791268, 0.0157968, 0.762522, 0.00231759, 0.995552, -0.00923603, -0.481932, 1.77903, 0.031137, 0.18992 )
+
+[node name="PC" parent="scene" instance=ExtResource( 8 )]
+transform = Transform( 0.0020781, -0.000227094, -0.19708, -0.000484173, 0.1726, 0.000227089, 0.134398, -0.000484179, -0.00207812, -0.13166, 0.0258527, -0.666578 )
+
+[node name="mouse5" parent="scene" instance=ExtResource( 10 )]
+transform = Transform( -2.67755e-09, 5.82077e-11, -0.0516089, 6.54836e-11, 0.0516089, -4.07454e-10, 0.0516089, 1.27329e-11, -2.44472e-09, 0.575648, 0.118542, 0.488905 )
 
 [node name="Taxbent" parent="." instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.1403, -3.00046, 9.91853 )
