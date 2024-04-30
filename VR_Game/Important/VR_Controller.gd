@@ -85,7 +85,7 @@ func _physics_process(delta):
 		if teleport_raycast.is_colliding():
 			# Make sure the teleport raycast is colliding with a StaticBody, and make
 			# sure it's normal is more or less facing upright.
-			if teleport_raycast.get_collider() is StaticBody:
+			if teleport_raycast.get_collfuncider() is StaticBody:
 				if teleport_raycast.get_collision_normal().y >= 0.85:
 					# Set teleport_pos to the raycast point and move the teleport mesh.
 					teleport_pos = teleport_raycast.get_collision_point()
