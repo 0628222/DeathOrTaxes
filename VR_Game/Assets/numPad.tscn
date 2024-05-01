@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/numPad.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Number2.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -12,7 +13,10 @@ extents = Vector3( 0.142963, 1, 1 )
 [node name="StaticBody" type="StaticBody" parent="2" index="0"]
 transform = Transform( 3.83355, 0, 0, 0, 1.02137, 0, 0, 0, 4.75443, 0, 0, 0.0596113 )
 physics_material_override = SubResource( 1 )
+script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="2/StaticBody" index="0"]
 transform = Transform( 1.51408, 0, 0, 0, 0.177582, 0, 0, 0, 0.184067, -0.00320661, 0.0337133, -0.00388808 )
 shape = SubResource( 2 )
+
+[connection signal="input_event" from="2/StaticBody" to="2/StaticBody" method="_on_StaticBody_input_event"]
