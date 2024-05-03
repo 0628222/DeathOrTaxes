@@ -1,4 +1,4 @@
 extends Spatial
 
-func 
-print("2")
+# func ready 
+# print("2")
