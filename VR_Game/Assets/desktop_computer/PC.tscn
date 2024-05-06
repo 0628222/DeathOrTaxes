@@ -26,3 +26,11 @@ texture = ExtResource( 3 )
 transform = Transform( 0.0748027, 0.0628138, -0.995218, 0.0840674, 0.994064, 0.0690597, 0.993648, -0.0888312, 0.0690781, 1.31153, 5.33249, 2.33767 )
 flip_h = true
 texture = ExtResource( 4 )
+
+[node name="Calculator" type="Label3D" parent="." index="5"]
+transform = Transform( 0.0934132, 0, 0.995627, 0, 1, 0, -0.995627, 0, 0.0934132, 2.64427, 6.54352, 3.27551 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in odio et leo tempor auctor nec at diam. Sed rhoncus ut massa eu porttitor. Aenean bibendum fringilla dictum. Pellentesque tristique sem sit amet risus aliquam pharetra. In et volutpat ligula, eu placerat turpis. Nulla lobortis viverra augue, ac lobortis purus dignissim non. Vivamus id lacus nec ligula commodo efficitur in sed justo. Nam tincidunt rhoncus elit, et pretium sem accumsan et. In tincidunt orci arcu, quis dignissim enim tincidunt eu. Mauris id tincidunt risus, at vulputate felis. Praesent quis luctus tellus, at convallis sem.
+
+Aliquam eget semper mauris. Praesent sagittis neque et tellus elementum pulvinar. Pellentesque non luctus erat, ut molestie justo. Etiam enim massa, cursus eget scelerisque non, accumsan sit amet nisl. Aliquam eu rutrum nulla, sed consequat sapien. Integer sed dignissim nunc. Curabitur pulvinar mi neque, eu suscipit ligula convallis vel. Morbi scelerisque mollis vehicula. Maecenas at pellentesque ante. Suspendisse urna leo, faucibus vitae nulla dignissim, iaculis tristique sapien. Maecenas quis risus ac tellus aliquet tristique vel non nibh. Suspendisse placerat vitae justo nec gravida. Nulla mollis nisi non metus tincidunt laoreet. Aenean sagittis justo ac metus tristique efficitur. Donec facilisis interdum auctor. Nunc sodales vitae sapien et egestas.
+
+"
