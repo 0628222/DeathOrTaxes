@@ -61,8 +61,8 @@ func _ready():
 	grab_area = get_node("Area")
 	grab_raycast = get_node("GrabCast")
 	grab_pos_node = get_node("Grab_Pos")
-	grab_mode = "AREA"
-	#grab_mode = "RAYCAST"
+	#grab_mode = "AREA"
+	grab_mode = "RAYCAST"
 	
 	# Connect the sleep area signals (to make it where RigidBodies cannot sleep when close to
 	# the player)
@@ -85,7 +85,7 @@ func _physics_process(delta):
 		if teleport_raycast.is_colliding():
 			# Make sure the teleport raycast is colliding with a StaticBody, and make
 			# sure it's normal is more or less facing upright.
-			if teleport_raycast.get_collfuncider() is StaticBody:
+			if teleport_raycast.get_collider() is StaticBody:
 				if teleport_raycast.get_collision_normal().y >= 0.85:
 					# Set teleport_pos to the raycast point and move the teleport mesh.
 					teleport_pos = teleport_raycast.get_collision_point()
@@ -187,41 +187,43 @@ func _physics_process(delta):
 
 
 func button_pressed(button_index):
+	print("Button Pressed: " + str(button_index))
 	# If the trigger is pressed...
-	if button_index == 15:
-		# Interact with held object, if there is one
-		if held_object != null:
-			if held_object.has_method("interact"):
-				held_object.interact()
-				Global.pressing_trigger = "Yes"
-		
-		# Teleport if we are not holding a object.
-		else:
-			# Make sure the other controller is not already trying to teleport.
-			if teleport_mesh.visible == false and held_object == null:
-				teleport_button_down = true
-				teleport_mesh.visible = true
-				teleport_raycast.visible = true
+#	if button_index == 15:
+#		# Interact with held object, if there is one
+#		if held_object != null:
+#			if held_object.has_method("interact"):
+#				held_object.interact()
+#				Global.pressing_trigger = "Yes"
+#
+#		# Teleport if we are not holding a object.
+#		else:
+#			pass
+#			# Make sure the other controller is not already trying to teleport.
+##			if teleport_mesh.visible == false and held_object == null:
+##				teleport_button_down = true
+##				teleport_mesh.visible = true
+##				teleport_raycast.visible = true
 	
 	
 	# If the grab button is pressed...
 	if button_index == 14: #2
-		
+
 		# Make sure we cannot pick up objects while trying to teleport.
 		if (teleport_button_down == true):
 			return
-		
+
 		# Pick up RigidBody if we are not holding a object
 		if held_object == null:
-			
+
 			var rigid_body = null
-			
+
 			# If we are using a Area to grab
 			if (grab_mode == "AREA"):
 				# Get all of the bodies in the grab area, assuming there are any
 				var bodies = grab_area.get_overlapping_bodies()
 				if len(bodies) > 0:
-					
+
 					# Check to see if there is a rigid body among the bodies inside the grab area.
 					for body in bodies:
 						if body is RigidBody:
@@ -235,10 +237,11 @@ func button_pressed(button_index):
 							else:
 								if body.has_method("Press"):
 									body.Press()
-			
-			
+
+
 			# We are using the raycast to grab
 			elif (grab_mode == "RAYCAST"):
+				print("Raycast")
 				# Force the raycast to update
 				grab_raycast.force_raycast_update()
 				# Check if the raycast is colliding.
@@ -247,84 +250,96 @@ func button_pressed(button_index):
 					# a variable called NO_PICKUP, then we can pick it up
 					if grab_raycast.get_collider() is RigidBody and !("NO_PICKUP" in grab_raycast.get_collider()):
 						rigid_body = grab_raycast.get_collider()
-			
-			
+						print(rigid_body.name)
+						if rigid_body.has_method("interact"):
+							rigid_body.interact()
+							Global.pressing_trigger = "Yes"
+
+
 			# If there was a RigidBody found using either the Area or the Raycast
 			if rigid_body != null:
-				
+				pass
 				# Assign held object to it.
-				held_object = rigid_body
-				
+				#held_object = rigid_body
+
+
+#				if held_object.has_method("interact"):
+#					held_object.interact()
+#					Global.pressing_trigger = "Yes"
+		
+
+
 				# Store the now held RigidBody's information.
-				held_object_data["mode"] = held_object.mode
-				held_object_data["layer"] = held_object.collision_layer
-				held_object_data["mask"] = held_object.collision_mask
-				
-				# Set it so it cannot collide with anything.
-				held_object.mode = RigidBody.MODE_STATIC
-				held_object.collision_layer = 0
-				held_object.collision_mask = 0
-				
-				# Make the hand mesh invisible.
-				hand_mesh.visible = false
-				# Make the grab raycast mesh invisible.
-				grab_raycast.visible = false
-				
-				# If the RigidBody has a function called picked_up, then call it.
-				if (held_object.has_method("picked_up")):
-					held_object.picked_up()
-				# If the RigidBody has a variable called controller, then assign it to this controller.
-				if ("controller" in held_object):
-					held_object.controller = self
-		
-		
+#				held_object_data["mode"] = held_object.mode
+#				held_object_data["layer"] = held_object.collision_layer
+#				held_object_data["mask"] = held_object.collision_mask
+#
+#				# Set it so it cannot collide with anything.
+#				held_object.mode = RigidBody.MODE_STATIC
+#				held_object.collision_layer = 0
+#				held_object.collision_mask = 0
+#
+#				# Make the hand mesh invisible.
+#				hand_mesh.visible = false
+#				# Make the grab raycast mesh invisible.
+#				grab_raycast.visible = false
+#
+#				# If the RigidBody has a function called picked_up, then call it.
+#				if (held_object.has_method("picked_up")):
+#					print("picked up an object")
+#					#held_object.picked_up()
+#				# If the RigidBody has a variable called controller, then assign it to this controller.
+#				if ("controller" in held_object):
+#					held_object.controller = self
+
+
 		# Drop/Throw RigidBody if we are holding a object
-		else:
-			
-			# Set the held object's RigidBody data back to what is stored.
-			held_object.mode = held_object_data["mode"]
-			held_object.collision_layer = held_object_data["layer"]
-			held_object.collision_mask = held_object_data["mask"]
-			
-			# Apply a impulse in the direction of the controller's velocity.
-			held_object.apply_impulse(Vector3(0, 0, 0), controller_velocity)
-			
-			# If the RigidBody has a function called dropped, then call it.
-			if held_object.has_method("dropped"):
-				held_object.dropped()
-			
-			# If the RigidBody has a variable called controller, then set it to null
-			if "controller" in held_object:
-				held_object.controller = null
-			
-			# Set held_object to null since this controller is no longer holding anything.
-			held_object = null
-			# Make the hand mesh visible.
-			hand_mesh.visible = true
-			
-			# Make the grab raycast mesh visible if we are using the RAYCAST grab mode
-			if (grab_mode == "RAYCAST"):
-				grab_raycast.visible = true
-			
-		
-		# play the pick-up/drop noise
-		get_node("AudioStreamPlayer3D").play(0)
-	
-	
+#		else:
+#
+#			# Set the held object's RigidBody data back to what is stored.
+#			held_object.mode = held_object_data["mode"]
+#			held_object.collision_layer = held_object_data["layer"]
+#			held_object.collision_mask = held_object_data["mask"]
+#
+#			# Apply a impulse in the direction of the controller's velocity.
+#			held_object.apply_impulse(Vector3(0, 0, 0), controller_velocity)
+#
+#			# If the RigidBody has a function called dropped, then call it.
+#			if held_object.has_method("dropped"):
+#				held_object.dropped()
+#
+#			# If the RigidBody has a variable called controller, then set it to null
+#			if "controller" in held_object:
+#				held_object.controller = null
+#
+#			# Set held_object to null since this controller is no longer holding anything.
+#			held_object = null
+#			# Make the hand mesh visible.
+#			hand_mesh.visible = true
+#
+#			# Make the grab raycast mesh visible if we are using the RAYCAST grab mode
+#			if (grab_mode == "RAYCAST"):
+#				grab_raycast.visible = true
+#
+#
+#		# play the pick-up/drop noise
+#		get_node("AudioStreamPlayer3D").play(0)
+
+
 	# If the menu button is pressed...
-	if button_index == 2:
-		# Change modes to the opposite mode, and make the grab raycast visible/invisible as needed.
-		#
-		# NOTE: There are better ways to do this, but for the purposes of this tutorial, this will
-		# work fine.
-		if grab_mode == "AREA":
-			grab_mode = "RAYCAST"
-			
-			if held_object == null:
-				grab_raycast.visible = true
-		elif grab_mode == "RAYCAST":
-			grab_mode = "AREA"
-			grab_raycast.visible = false
+#	if button_index == 2:
+#		# Change modes to the opposite mode, and make the grab raycast visible/invisible as needed.
+#		#
+#		# NOTE: There are better ways to do this, but for the purposes of this tutorial, this will
+#		# work fine.
+#		if grab_mode == "AREA":
+#			grab_mode = "RAYCAST"
+#
+#			if held_object == null:
+#				grab_raycast.visible = true
+#		elif grab_mode == "RAYCAST":
+#			grab_mode = "AREA"
+#			grab_raycast.visible = false
 
 
 func button_released(button_index):
