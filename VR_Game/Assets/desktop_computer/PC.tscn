@@ -29,11 +29,12 @@ __meta__ = {
 "_editor_description_": "help me "
 }
 
-[node name="ColorRect" type="ColorRect" parent="PCDisplay/Viewport" index="0"]
+[node name="Camera2D" type="Camera2D" parent="PCDisplay/Viewport" index="0"]
+
+[node name="ColorRect" type="ColorRect" parent="PCDisplay/Viewport" index="1"]
 material = SubResource( 3 )
 margin_right = 40.0
 margin_bottom = 40.0
-color = Color( 0.027451, 0.996078, 0.45098, 1 )
 
 [node name="Calculator" type="Label3D" parent="PCDisplay/Viewport/ColorRect" index="0"]
 transform = Transform( 0.062261, 0, 0.663597, 0, 0.666512, 0, -0.112346, 0, 0.0105407, 2.64427, 6.54352, 3.27551 )
