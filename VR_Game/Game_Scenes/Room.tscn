@@ -3,7 +3,7 @@
 [ext_resource path="res://Images/FlippedLogo.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/antique_wall_clock/Clock.gltf" type="PackedScene" id=2]
 [ext_resource path="res://Assets/single_spiral_notepad/taxpad.gltf" type="PackedScene" id=3]
-[ext_resource path="res://Assets/computer_desk/scene.gltf" type="PackedScene" id=4]
+[ext_resource path="res://Assets/colDesk.tscn" type="PackedScene" id=4]
 [ext_resource path="res://_MyContent/Images/Wood_Normal.jpg" type="Texture" id=5]
 [ext_resource path="res://Images/image1.png" type="Texture" id=6]
 [ext_resource path="res://Images/FlipSlip.png" type="Texture" id=7]
@@ -79,9 +79,6 @@ transform = Transform( -0.400139, 0.989997, 0.502943, -9.8323, -0.215568, 0.1108
 
 [node name="Clock" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.091809, -0.0642988, 0.993944, -0.194952, 3.50019, 0.217727, -2.20028, -0.152658, 0.194526, -7.8768, 4.77996, 0.716144 )
-
-[node name="Desk" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.0536393, 0.0145144, 1.24394, 0.00702742, 0.68187, -0.00825901, -1.52496, 0.0165107, 0.0655642, -0.85532, 1.29368, 1.56998 )
 
 [node name="Floor_Main" type="CSGMesh" parent="."]
 transform = Transform( 15.81, 0, 0, 0, 0.291, 0, 0, 0, 7.905, 7.61261, -0.2935, 0 )
@@ -248,3 +245,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79198, 1.93892, 1.89235 )
 
 [node name="base" parent="Button0" instance=ExtResource( 10 )]
 transform = Transform( 0.119768, 0, 0, 0, 0.119768, 0, 0, 0, 0.119768, -2.83681, -0.499809, 0 )
+
+[node name="scene" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.0337794, 0, 1.46043, 0, 1, 0, -1.46043, 0, 0.0337794, -0.648245, 1.2786, 1.54581 )
