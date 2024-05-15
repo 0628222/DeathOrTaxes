@@ -3,6 +3,7 @@
 [ext_resource path="res://Assets/button4.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.260157, 0.681286, 0.233109 )
 
 [sub_resource type="ArrayMesh" id=9]
 resource_name = "numPad_Cube043"
@@ -22,7 +23,7 @@ surfaces/0 = {
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 4.16734, 0, 0, 0, 0.303381, 0, 0, 0, 4.69668, 0, 0, 0 )
+transform = Transform( 4.16734, 0, 0, 0, 0.303381, 0, 0, 0, 4.69668, 0.173911, -0.0392766, 0.271563 )
 shape = SubResource( 8 )
 
 [node name="4" type="MeshInstance" parent="."]

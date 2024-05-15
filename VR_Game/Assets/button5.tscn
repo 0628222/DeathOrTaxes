@@ -3,6 +3,7 @@
 [ext_resource path="res://Assets/button5.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.270936, 1, 0.233565 )
 
 [sub_resource type="ArrayMesh" id=9]
 resource_name = "numPad_Cube034"
@@ -26,5 +27,5 @@ transform = Transform( 4.16734, 0, 0, 0, 0.303381, 0, 0, 0, 4.69668, 0, 0, 0 )
 shape = SubResource( 8 )
 
 [node name="5" type="MeshInstance" parent="."]
-transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1.238, 0, 0, 0 )
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1.238, 0.291618, 0, 0 )
 mesh = SubResource( 9 )

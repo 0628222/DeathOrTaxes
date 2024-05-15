@@ -106,7 +106,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318222, -0.344263, -0.001979
 shape = SubResource( 5 )
 
 [node name="FPController" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.080773, 0, 0.996733, 0, 1, 0, -0.996733, 0, 0.080773, 1.71335, 1.13396, 1.6679 )
+transform = Transform( 0.0765514, -0.319059, 0.944639, 0.0257713, 0.947735, 0.318016, -0.996733, 0, 0.080773, 1.71335, 1.13396, 1.6679 )
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 6.90355, 0, 0, 0, 3.33839, 0, 0, 0, 0.332209, 0.934285, 1.55522, -6.29912 )
@@ -234,11 +234,17 @@ light_energy = 5.0
 transform = Transform( -0.810849, -1.53473e-05, 0.0383646, 0, 0.0138411, 0.0147542, -0.0436018, 0.000285409, -0.713454, -0.165207, 1.33096, 4.13092 )
 material = SubResource( 18 )
 
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource( 15 )]
+transform = Transform( -0.0589113, -0.0138751, 0.998167, -0.000252899, 0.999904, 0.0138843, -0.998263, 0.000565499, -0.0589091, -1.74801, 2.38607, 0 )
+scene = ExtResource( 16 )
+
+[node name="base" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.119768, 0, 0, 0, 0.119768, 0, 0, 0, 0.119768, -0.00299808, 2.11638, 2.18311 )
+
+
 [node name="Button0" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79198, 1.93892, 1.89235 )
 
-[node name="base" parent="Button0" instance=ExtResource( 10 )]
-transform = Transform( 0.119768, 0, 0, 0, 0.119768, 0, 0, 0, 0.119768, -2.83681, -0.499809, 0 )
-
-[node name="scene" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.0337794, 0, 1.46043, 0, 1, 0, -1.46043, 0, 0.0337794, -0.648245, 1.2786, 1.54581 )
+[node name="desk" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.0337794, 0, 1.46043, 0, 1, 0, -1.46043, 0, 0.0337794, -0.648245, 1.24594, 1.54581 )
