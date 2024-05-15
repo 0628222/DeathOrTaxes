@@ -17,6 +17,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.237134, 1, 0.228278 )
 
 [node name="Button0" type="RigidBody"]
 script = ExtResource( 1 )
@@ -25,5 +26,5 @@ script = ExtResource( 1 )
 mesh = SubResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 4.16734, 0, 0, 0, 0.303381, 0, 0, 0, 4.69668, 0, 0, 0 )
+transform = Transform( 4.16734, 0, 0, 0, 0.303381, 0, 0, 0, 4.69668, -0.0266504, 0, 0 )
 shape = SubResource( 8 )
