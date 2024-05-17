@@ -1,3 +1,4 @@
+tool 
 extends Viewport
 
 func _ready():
@@ -5,7 +6,12 @@ func _ready():
 	expression.parse ("20 +10")
 	var result = expression.execute()
 	print(result) #37.5 
-	
+		
+
+
+func _process(delta):
+	#size = $Calculator.rect_size
+	$HUD/Calculator.text = str("10000")
 #	#var Viewport 
 #	Viewport.size = Vector2(200, 200)
 #	Viewport.render_target_update_mode = Viewport.UPDATE_ALWAYS
